@@ -31,4 +31,40 @@ public class Claim {
         this.receiverBankInfo = receiverBankInfo;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public Date getClaimDate() {
+        return claimDate;
+    }
+
+    public Customer getInsuredPerson() {
+        return insuredPerson;
+    }
+
+    public InsuranceCard getCardNumber() {
+        return cardNumber;
+    }
+
+    public Date getExamDate() {
+        return examDate;
+    }
+
+    public String[] getDocuments() {
+        return documents;
+    }
+
+    public int getClaimAmount() {
+        return claimAmount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getReceiverBankInfo() {
+        return receiverBankInfo.toString();
+    }
+
 }

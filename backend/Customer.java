@@ -69,5 +69,45 @@ public class Customer implements ClaimProcessManager{
     public void getAll() {
 
     }
+
+    public String getID() {
+        return ID;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public Boolean getPolicyHolder() {
+        return isPolicyHolder;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setPolicyHolder(Boolean policyHolder) {
+        isPolicyHolder = policyHolder;
+    }
+
+    public List<Customer> getDependents() {
+        return dependents;
+    }
+
+    public void setDependents(List<Customer> dependents) {
+        this.dependents = dependents;
+    }
+
+    public void addDependent(Customer dependent){
+        dependents.add(dependent);
+    }
+    public void removeDependent(Customer dependent){
+        dependents.remove(dependent);
+    }
+
 }
 

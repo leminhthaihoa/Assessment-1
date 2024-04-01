@@ -23,4 +23,37 @@ public class InsuranceCard {
     }
 
 
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public Customer getCardHolder() {
+        return cardHolder;
+    }
+
+    public Customer getPolicyOwner() {
+        return policyOwner;
+    }
+
+    public Date getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public void setCardHolder(Customer cardHolder) {
+        this.cardHolder = cardHolder;
+    }
+
+    public void setPolicyOwner(Customer policyOwner) {
+        this.policyOwner = policyOwner;
+    }
+
+    public void setExpirationDate(Date expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+
 }
