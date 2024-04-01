@@ -85,4 +85,35 @@ public class Claim {
         return receiverBankInfo.toString();
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setClaimDate(Date claimDate) {
+        this.claimDate = claimDate;
+    }
+
+    public void setInsuredPerson(Customer insuredPerson) {
+        this.insuredPerson = insuredPerson;
+    }
+
+    public void setCardNumber(InsuranceCard cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public void setExamDate(Date examDate) {
+        this.examDate = examDate;
+    }
+
+    public void setDocuments(String[] documents) {
+        this.documents = documents;
+    }
+
+    public void setClaimAmount(int claimAmount) {
+        this.claimAmount = claimAmount;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

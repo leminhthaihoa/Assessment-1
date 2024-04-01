@@ -61,13 +61,21 @@ public class Customer implements ClaimProcessManager{
     }
 
     @Override
-    public void getOne(Claim claim) {
-
+    public void getOne(int ind) {
+        for (int i = 0; i < claims.size(); i++){
+            if (ind == 1){
+                System.out.println(claims.getFirst());
+            } else {
+                System.out.println(claims.get(ind));
+            }
+        }
     }
 
     @Override
     public void getAll() {
-
+        for (Claim claim : claims) {
+            System.out.println(claim);
+        }
     }
 
     public String getID() {

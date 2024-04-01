@@ -6,7 +6,7 @@ public interface ClaimProcessManager {
 
     public void deleteClaim(int ind);
 
-    public void getOne(Claim claim);
+    public void getOne(int ind);
 
     public void getAll();
 }
