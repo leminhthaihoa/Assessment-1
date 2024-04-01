@@ -2,7 +2,7 @@ package backend;
 
 import java.util.List;
 
-public class Customer {
+public class Customer implements ClaimProcessManager{
     private String ID;
     private String fullName;
     private Boolean isPolicyHolder;
@@ -29,4 +29,45 @@ public class Customer {
     }
 
 
+    @Override
+    public void addClaim(Claim claim) {
+        claims.add(claim);
+    }
+
+    @Override
+    public void updateClaim(Claim claim, int ind) {
+        for (int i = 0; i < claims.size(); i++) {
+            if (ind == 1) {
+                claims.set(0, claim);
+            }
+            if (ind == i) {
+                claims.set(ind, claim);
+            }
+        }
+    }
+
+    @Override
+    public void deleteClaim(int ind) {
+            for (int i = 0; i < claims.size(); i++){
+                if (ind == 1){
+                    claims.removeFirst();
+                } else {
+                    if (ind == i){
+                        claims.remove(ind);
+                    }
+                }
+
+            }
+    }
+
+    @Override
+    public void getOne(Claim claim) {
+
+    }
+
+    @Override
+    public void getAll() {
+
+    }
 }
+
