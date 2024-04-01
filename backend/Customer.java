@@ -11,4 +11,22 @@ public class Customer {
 
     private List<Customer> dependents;
 
+    public Customer() {
+        this.ID = "";
+        this.fullName = "";
+        this.insuranceCard = null;
+        this.claims = null;
+        this.isPolicyHolder = null;
+        this.dependents = null;
+    }
+
+    public Customer(String ID, String fullName, Boolean isPolicyHolder, InsuranceCard insuranceCard, List<Claim> claims) {
+        this.ID = ID;
+        this.fullName = fullName;
+        this.isPolicyHolder = isPolicyHolder;
+        this.insuranceCard = insuranceCard;
+        this.claims = claims;
+    }
+
+
 }
