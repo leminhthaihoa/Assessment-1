@@ -16,7 +16,25 @@ public class Claim {
     public Claim() {
         this.id = "";
         this.claimDate = null;
+        this.insuredPerson = null;
+        this.cardNumber = null;
+        this.examDate = null;
+        this.documents = null;
+        this.claimAmount = 0;
+        this.status = "";
+        this.receiverBankInfo = null;
+    }
 
+    public Claim(Customer insuredPerson, InsuranceCard cardNumber){
+        this.id = "";
+        this.claimDate = null;
+        this.insuredPerson = insuredPerson;
+        this.cardNumber = cardNumber;
+        this.examDate = null;
+        this.documents = null;
+        this.claimAmount = 0;
+        this.status = "";
+        this.receiverBankInfo = null;
     }
 
     public Claim(String id, Date claimDate, Customer insuredPerson, InsuranceCard cardNumber, Date examDate, String[] documents, int claimAmount, String status, BankingInfo receiverBankInfo) {
