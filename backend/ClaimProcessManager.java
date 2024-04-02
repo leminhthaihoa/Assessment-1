@@ -1,12 +1,13 @@
 package backend;
 
+import java.util.List;
+
 public interface ClaimProcessManager {
-    public void addClaim(Claim claim);
-    public void updateClaim(Claim claim, int ind);
-
-    public void deleteClaim(int ind);
-
-    public void getOne(int ind);
-
-    public void getAll();
+    void add(Claim claim);
+    void update(Claim claim);
+    void delete(Claim claim);
+    Claim getOne(String id);
+    List<Claim> getAll();
+    void saveReport(String fileName);
+    void displaySorted(String field);
 }
