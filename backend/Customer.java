@@ -1,5 +1,6 @@
 package backend;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Customer{
@@ -11,21 +12,22 @@ public class Customer{
 
     private List<Customer> dependents;
 
-    public Customer() {
-        this.ID = "";
-        this.fullName = "";
-        this.insuranceCardNumber = null;
-        this.claims = null;
-        this.isPolicyHolder = null;
-        this.dependents = null;
-    }
+//    public Customer() {
+//        this.ID = "";
+//        this.fullName = "";
+//        this.insuranceCardNumber = null;
+//        this.claims = null;
+//        this.isPolicyHolder = null;
+//        this.dependents = null;
+//    }
 
-    public Customer(String ID, String fullName, Boolean isPolicyHolder, InsuranceCard insuranceCard, List<Claim> claims) {
+    public Customer(String ID, String fullName, Boolean isPolicyHolder, InsuranceCard insuranceCard) {
         this.ID = ID;
         this.fullName = fullName;
         this.isPolicyHolder = isPolicyHolder;
         this.insuranceCardNumber = insuranceCard;
-        this.claims = claims;
+        this.claims = new ArrayList<>();
+        this.dependents = new ArrayList<>();
     }
 
     public String getID() {
@@ -62,6 +64,9 @@ public class Customer{
 
     public InsuranceCard getInsuranceCardNumber() {
         return insuranceCardNumber;
+    }
+    public List<Claim> getClaims() {
+        return claims;
     }
 }
 
