@@ -1,12 +1,13 @@
 package backend;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class InsuranceCard {
     private String cardNumber;
-    private Customer cardHolder;
-    private Customer policyOwner;
-    private Date expirationDate;
+    private String cardHolder;
+    private String policyOwner;
+    private LocalDate expirationDate;
 
     public InsuranceCard() {
         this.cardHolder = null;
@@ -15,27 +16,33 @@ public class InsuranceCard {
         this.expirationDate = null;
     }
 
-    public InsuranceCard(Customer cardHolder, Customer policyOwner){
-        this.cardHolder = cardHolder;
-        this.cardNumber = "";
-        this.policyOwner = policyOwner;
-        this.expirationDate = null;
-    }
+//    public InsuranceCard(Customer cardHolder, Customer policyOwner){
+//        this.cardHolder = cardHolder;
+//        this.cardNumber = "";
+//        this.policyOwner = policyOwner;
+//        this.expirationDate = null;
+//    }
 
+    public InsuranceCard(String cardNumber, String cardHolder, String policyOwner, LocalDate expirationDate) {
+        this.cardNumber = cardNumber;
+        this.cardHolder = cardHolder;
+        this.policyOwner = policyOwner;
+        this.expirationDate = expirationDate;
+    }
 
     public String getCardNumber() {
         return cardNumber;
     }
 
-    public Customer getCardHolder() {
+    public String getCardHolder() {
         return cardHolder;
     }
 
-    public Customer getPolicyOwner() {
+    public String getPolicyOwner() {
         return policyOwner;
     }
 
-    public Date getExpirationDate() {
+    public LocalDate getExpirationDate() {
         return expirationDate;
     }
 
@@ -43,15 +50,15 @@ public class InsuranceCard {
         this.cardNumber = cardNumber;
     }
 
-    public void setCardHolder(Customer cardHolder) {
+    public void setCardHolder(String cardHolder) {
         this.cardHolder = cardHolder;
     }
 
-    public void setPolicyOwner(Customer policyOwner) {
+    public void setPolicyOwner(String policyOwner) {
         this.policyOwner = policyOwner;
     }
 
-    public void setExpirationDate(Date expirationDate) {
+    public void setExpirationDate(LocalDate expirationDate) {
         this.expirationDate = expirationDate;
     }
 

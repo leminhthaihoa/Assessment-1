@@ -12,23 +12,27 @@ public class Customer{
 
     private List<Customer> dependents;
 
-//    public Customer() {
-//        this.ID = "";
-//        this.fullName = "";
-//        this.insuranceCardNumber = null;
-//        this.claims = null;
-//        this.isPolicyHolder = null;
-//        this.dependents = null;
-//    }
-
-    public Customer(String ID, String fullName, Boolean isPolicyHolder, InsuranceCard insuranceCard) {
+    public Customer(String ID, String fullName, boolean isPolicyHolder, InsuranceCard insuranceCardNumber, List<Claim> claims, List<Customer> dependents) {
         this.ID = ID;
         this.fullName = fullName;
+        this.insuranceCardNumber = insuranceCardNumber;
+        this.claims = claims;
         this.isPolicyHolder = isPolicyHolder;
-        this.insuranceCardNumber = insuranceCard;
-        this.claims = new ArrayList<>();
-        this.dependents = new ArrayList<>();
+        this.dependents = dependents;
     }
+
+    public Customer() {
+
+    }
+
+//    public Customer(String ID, String fullName, Boolean isPolicyHolder, InsuranceCard) {
+//        this.ID = ID;
+//        this.fullName = fullName;
+//        this.isPolicyHolder = isPolicyHolder;
+//        this.insuranceCardNumber = insuranceCard;
+//        this.claims = new ArrayList<>();
+//        this.dependents = new ArrayList<>();
+//    }
 
     public String getID() {
         return ID;
@@ -67,6 +71,9 @@ public class Customer{
     }
     public List<Claim> getClaims() {
         return claims;
+    }
+
+    public void getInsuranceCardNumber(InsuranceCard insuranceCard) {
     }
 }
 

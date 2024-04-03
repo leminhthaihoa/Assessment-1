@@ -3,12 +3,16 @@ package backend;
 public class BankingInfo {
     private String bank;
     private String name;
-    private int number;
+    private String number;
 
-    public BankingInfo(String bank, String name, int number) {
+    public BankingInfo(String bank, String name, String number) {
         this.bank = bank;
         this.name = name;
         this.number = number;
+    }
+
+    public BankingInfo() {
+
     }
 
     @Override
@@ -28,7 +32,7 @@ public class BankingInfo {
         return name;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
@@ -40,7 +44,7 @@ public class BankingInfo {
         this.name = name;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 }

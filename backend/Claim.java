@@ -1,14 +1,12 @@
 package backend;
 
-import java.awt.*;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 public class Claim {
     private String id;
     private LocalDate claimDate;
     private Customer insuredPerson;
-    private InsuranceCard cardNumber;
+    private String cardNumber;
     private LocalDate examDate;
     private List<String> documents;
     private int claimAmount;
@@ -27,7 +25,7 @@ public class Claim {
         this.receiverBankInfo = null;
     }
 
-    public Claim(Customer insuredPerson, InsuranceCard cardNumber){
+    public Claim(Customer insuredPerson, String cardNumber){
         this.id = "";
         this.claimDate = null;
         this.insuredPerson = insuredPerson;
@@ -39,7 +37,7 @@ public class Claim {
         this.receiverBankInfo = null;
     }
 
-    public Claim(String id, LocalDate claimDate, Customer insuredPerson, InsuranceCard cardNumber, LocalDate examDate, List<String> documents, int claimAmount, String status, BankingInfo receiverBankInfo) {
+    public Claim(String id, LocalDate claimDate, Customer insuredPerson, String cardNumber, LocalDate examDate, List<String> documents, int claimAmount, String status, BankingInfo receiverBankInfo) {
         this.id = id;
         this.claimDate = claimDate;
         this.insuredPerson = insuredPerson;
@@ -63,7 +61,7 @@ public class Claim {
         return insuredPerson;
     }
 
-    public InsuranceCard getCardNumber() {
+    public String getCardNumber() {
         return cardNumber;
     }
 
@@ -87,6 +85,10 @@ public class Claim {
         return receiverBankInfo;
     }
 
+    public void setReceiverBankInfo(BankingInfo receiverBankInfo) {
+        this.receiverBankInfo = receiverBankInfo;
+    }
+
     public void setId(String id) {
         this.id = id;
     }
@@ -99,7 +101,7 @@ public class Claim {
         this.insuredPerson = insuredPerson;
     }
 
-    public void setCardNumber(InsuranceCard cardNumber) {
+    public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
 
