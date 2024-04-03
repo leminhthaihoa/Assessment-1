@@ -9,5 +9,4 @@ public interface ClaimProcessManager {
     Claim getOne(String id);
     List<Claim> getAll();
     void saveReport(String fileName);
-    void displaySorted(String field);
 }

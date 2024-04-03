@@ -1,14 +1,16 @@
 package backend;
 
+import java.awt.*;
+import java.time.LocalDate;
 import java.util.Date;
-
+import java.util.List;
 public class Claim {
     private String id;
-    private Date claimDate;
+    private LocalDate claimDate;
     private Customer insuredPerson;
     private InsuranceCard cardNumber;
-    private Date examDate;
-    private String[] documents;
+    private LocalDate examDate;
+    private List<String> documents;
     private int claimAmount;
     private String status;
     private BankingInfo receiverBankInfo;
@@ -37,7 +39,7 @@ public class Claim {
         this.receiverBankInfo = null;
     }
 
-    public Claim(String id, Date claimDate, Customer insuredPerson, InsuranceCard cardNumber, Date examDate, String[] documents, int claimAmount, String status, BankingInfo receiverBankInfo) {
+    public Claim(String id, LocalDate claimDate, Customer insuredPerson, InsuranceCard cardNumber, LocalDate examDate, List<String> documents, int claimAmount, String status, BankingInfo receiverBankInfo) {
         this.id = id;
         this.claimDate = claimDate;
         this.insuredPerson = insuredPerson;
@@ -53,7 +55,7 @@ public class Claim {
         return id;
     }
 
-    public Date getClaimDate() {
+    public LocalDate getClaimDate() {
         return claimDate;
     }
 
@@ -65,11 +67,11 @@ public class Claim {
         return cardNumber;
     }
 
-    public Date getExamDate() {
+    public LocalDate getExamDate() {
         return examDate;
     }
 
-    public String[] getDocuments() {
+    public List<String> getDocuments() {
         return documents;
     }
 
@@ -81,15 +83,15 @@ public class Claim {
         return status;
     }
 
-    public String getReceiverBankInfo() {
-        return receiverBankInfo.toString();
+    public BankingInfo getReceiverBankInfo() {
+        return receiverBankInfo;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
-    public void setClaimDate(Date claimDate) {
+    public void setClaimDate(LocalDate claimDate) {
         this.claimDate = claimDate;
     }
 
@@ -101,11 +103,11 @@ public class Claim {
         this.cardNumber = cardNumber;
     }
 
-    public void setExamDate(Date examDate) {
+    public void setExamDate(LocalDate examDate) {
         this.examDate = examDate;
     }
 
-    public void setDocuments(String[] documents) {
+    public void setDocuments(List<String> documents) {
         this.documents = documents;
     }
 
