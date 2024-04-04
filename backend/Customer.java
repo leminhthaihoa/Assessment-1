@@ -22,7 +22,12 @@ public class Customer{
     }
 
     public Customer() {
-
+        this.ID = "";
+        this.fullName = "";
+        this.insuranceCardNumber = null;
+        this.claims = new ArrayList<>();
+        this.isPolicyHolder = null;
+        this.dependents = new ArrayList<>();
     }
 
 //    public Customer(String ID, String fullName, Boolean isPolicyHolder, InsuranceCard) {
@@ -74,6 +79,22 @@ public class Customer{
     }
 
     public void getInsuranceCardNumber(InsuranceCard insuranceCard) {
+    }
+
+    public void setInsuranceCardNumber(InsuranceCard insuranceCardNumber) {
+        this.insuranceCardNumber = insuranceCardNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "ID='" + ID + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", isPolicyHolder=" + isPolicyHolder +
+                ", insuranceCardNumber=" + insuranceCardNumber +
+                ", claims=" + claims +
+                ", dependents=" + dependents +
+                '}';
     }
 }
 
