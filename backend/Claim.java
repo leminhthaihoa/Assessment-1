@@ -7,7 +7,7 @@ import java.util.List;
 public class Claim {
     private String id;
     private LocalDate claimDate;
-    private Customer insuredPerson;
+    private String insuredPerson;
     private String cardNumber;
     private LocalDate examDate;
     private List<String> documents;
@@ -27,7 +27,7 @@ public class Claim {
         this.receiverBankInfo = null;
     }
 
-    public Claim(Customer insuredPerson, String cardNumber){
+    public Claim(String insuredPerson, String cardNumber){
         this.id = "";
         this.claimDate = null;
         this.insuredPerson = insuredPerson;
@@ -39,7 +39,7 @@ public class Claim {
         this.receiverBankInfo = null;
     }
 
-    public Claim(String id, LocalDate claimDate, Customer insuredPerson, String cardNumber, LocalDate examDate, List<String> documents, Double claimAmount, String status, BankingInfo receiverBankInfo) {
+    public Claim(String id, LocalDate claimDate, String insuredPerson, String cardNumber, LocalDate examDate, List<String> documents, Double claimAmount, String status, BankingInfo receiverBankInfo) {
         this.id = id;
         this.claimDate = claimDate;
         this.insuredPerson = insuredPerson;
@@ -67,11 +67,11 @@ public class Claim {
         this.claimDate = claimDate;
     }
 
-    public Customer getInsuredPerson() {
+    public String getInsuredPerson() {
         return insuredPerson;
     }
 
-    public void setInsuredPerson(Customer insuredPerson) {
+    public void setInsuredPerson(String insuredPerson) {
         this.insuredPerson = insuredPerson;
     }
 

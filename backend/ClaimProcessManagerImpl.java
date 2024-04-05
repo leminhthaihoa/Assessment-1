@@ -59,7 +59,7 @@ public class ClaimProcessManagerImpl implements ClaimProcessManager{
     public void saveClaims(String fileName) {
         try (FileWriter writer = new FileWriter(fileName)) {
             for (Claim claim : claims) {
-                String insuredPersonName = claim.getInsuredPerson().getFullName();
+                String insuredPersonName = claim.getInsuredPerson();
                 String cardNumber = claim.getCardNumber();
                 String examDate = claim.getExamDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
                 String documents = String.join(";", claim.getDocuments());
@@ -134,8 +134,7 @@ public class ClaimProcessManagerImpl implements ClaimProcessManager{
                     System.out.println("Skipping invalid insurance card number: " + values[3]);
                     continue;
                 }
-                customer.getInsuranceCardNumber(insuranceCard);
-                claim.setInsuredPerson(customer);
+                claim.setInsuredPerson(customer.getFullName());
                 claim.setCardNumber(values[3]);
                 claim.setExamDate(LocalDate.parse(values[4], DateTimeFormatter.ofPattern("yyyy-MM-dd")));
                 claim.setDocuments(List.of(values[5].split(";")));
