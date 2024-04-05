@@ -9,5 +9,5 @@ public interface ClaimProcessManager {
     void delete(Claim claim);
     Claim getOne(String id);
     List<Claim> getAll();
-    void saveReport(String fileName);
+
 }

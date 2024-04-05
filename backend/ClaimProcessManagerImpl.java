@@ -56,37 +56,15 @@ public class ClaimProcessManagerImpl implements ClaimProcessManager{
         return claims;
     }
 
-    @Override
-    public void saveReport(String fileName) {
-        FileWriter writer = null;
-        try {
-            writer = new FileWriter(fileName);
-            for (Claim claim : claims){
-                writer.write(claim.getId() + ","
-                        + claim.getClaimDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) +
-                        "," + claim.getInsuredPerson().getID() +
-                        "," + claim.getCardNumber() +
-                        "," + claim.getExamDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) +
-                        "," + claim.getDocuments() +
-                        "," + claim.getClaimAmount() +
-                        "," + claim.getStatus() +
-                        "," + claim.getReceiverBankInfo().getBank() +
-                        "-" + claim.getReceiverBankInfo().getName() +
-                        "-" + claim.getReceiverBankInfo().getNumber() + "\n");
-            }
-        } catch (IOException e) {
-            System.err.println("Error writing to file: " + e.getMessage());
-        }
-    }
-    private void saveClaims() {
-        try (FileWriter writer = new FileWriter("claims.txt")) {
+    public void saveClaims(String fileName) {
+        try (FileWriter writer = new FileWriter(fileName)) {
             for (Claim claim : claims) {
                 String insuredPersonName = claim.getInsuredPerson().getFullName();
                 String cardNumber = claim.getCardNumber();
                 String examDate = claim.getExamDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
                 String documents = String.join(";", claim.getDocuments());
-                String receiverBankingInfo = claim.getReceiverBankInfo().getBank() + ","
-                        + claim.getReceiverBankInfo().getName() + ","
+                String receiverBankingInfo = claim.getReceiverBankInfo().getBank() + "-"
+                        + claim.getReceiverBankInfo().getName() + "-"
                         + claim.getReceiverBankInfo().getNumber();
                 writer.write(claim.getId() + "," + claim.getClaimDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")) + "," + insuredPersonName + "," + cardNumber + "," + examDate + "," + documents + "," + claim.getClaimAmount() + "," + claim.getStatus() + "," + receiverBankingInfo + "\n");
             }
@@ -103,8 +81,9 @@ public class ClaimProcessManagerImpl implements ClaimProcessManager{
                 Customer customer = new Customer();
                 customer.setID(values[0]);
                 customer.setFullName(values[1]);
+                customer.setPolicyHolder(Boolean.parseBoolean(values[2]));
                 InsuranceCard insuranceCard = new InsuranceCard();
-                insuranceCard.setCardNumber(values[2]);
+                insuranceCard.setCardNumber(values[3]);
                 customer.setInsuranceCardNumber(insuranceCard);
                 customers.add(customer);
             }
@@ -163,17 +142,30 @@ public class ClaimProcessManagerImpl implements ClaimProcessManager{
                 claim.setClaimAmount(Double.parseDouble(values[6]));
                 claim.setStatus(values[7]);
                 BankingInfo bankingInfo = new BankingInfo();
-                String[] bankingInfoValues = values[8].split(",");
-                if (bankingInfoValues.length >= 1) {
-                    bankingInfo.setBank(bankingInfoValues[0]);
+                if (values.length > 8) {
+                    String[] bankingInfoValues = values[8].split("-");
+                    if (bankingInfoValues.length >= 3) {
+                        bankingInfo.setBank(bankingInfoValues[0]);
+                        bankingInfo.setName(bankingInfoValues[1]);
+                        bankingInfo.setNumber(bankingInfoValues[2]);
+                        claim.setReceiverBankInfo(bankingInfo);
+                    } else {
+                        System.err.println("Unable to load banking info: " + String.join(",", values));
+                    }
+                } else {
+                    System.err.println("Unable to load banking info: " + String.join(",", values));
                 }
-                if (bankingInfoValues.length >= 2) {
-                    bankingInfo.setName(bankingInfoValues[1]);
-                }
-                if (bankingInfoValues.length >= 3) {
-                    bankingInfo.setNumber(bankingInfoValues[2]);
-                }
-                claim.setReceiverBankInfo(bankingInfo);
+//
+//                if (bankingInfoValues.length >= 1) {
+//
+//                }
+//                if (bankingInfoValues.length >= 2) {
+//
+//                }
+//                if (bankingInfoValues.length >= 3) {
+//
+//                }
+//
                 claims.add(claim);
             }
         } catch (IOException e) {

@@ -11,7 +11,7 @@ public class CustomerLoader {
     private List<Customer> customers;
 
     public CustomerLoader() {
-        customers = new ArrayList<>();
+        this.customers = new ArrayList<>();
     }
     public List<Customer> loadCustomers(String fileName, String insuranceCardFileName) throws IOException {
         List<Customer> customers = new ArrayList<>();
@@ -35,10 +35,8 @@ public class CustomerLoader {
                 String id = values[0];
                 String fullName = values[1];
                 String cardNumber = values[2];
-                String expirationDate = values[3];
-                boolean isPolicyHolder = Boolean.parseBoolean(values[4]);
-                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                LocalDate expiration = LocalDate.parse(expirationDate, formatter);
+                boolean isPolicyHolder = Boolean.parseBoolean(values[3]);
+                LocalDate expirationDate = LocalDate.parse(values[4]);
 
                 // Find the insurance card with the matching cardNumber
                 InsuranceCard insuranceCard = null;
@@ -54,7 +52,16 @@ public class CustomerLoader {
                     continue;
                 }
 
-                Customer customer = new Customer(id, fullName, isPolicyHolder, insuranceCard, new ArrayList<>(), new ArrayList<>());
+                // Load dependents if any
+                List<String> dependents = new ArrayList<>();
+                if (values.length > 5) {
+                    for (int i = 5; i < values.length; i += 1) {
+                        String dependentId = values[i];
+                        dependents.add(dependentId);
+                    }
+                }
+
+                Customer customer = new Customer(id, fullName, isPolicyHolder, insuranceCard,dependents);
                 customers.add(customer);
             }
         }

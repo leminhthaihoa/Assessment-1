@@ -17,6 +17,10 @@ public class InsuranceCardLoader {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] values = line.split(",");
+                if (values.length < 4) {
+                    System.err.println("Error loading insurance card: invalid line format: " + line);
+                    continue;
+                }
                 InsuranceCard insuranceCard = new InsuranceCard();
                 insuranceCard.setCardNumber(values[0]);
                 insuranceCard.setCardHolder(values[1]);

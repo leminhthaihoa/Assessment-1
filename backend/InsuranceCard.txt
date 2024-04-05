@@ -1,15 +1,15 @@
-1234567890,John Doe,Jane Doe,2024-12-31
-0987654321,Jim Brown,Jim Brown,2025-06-30
-1111111111,Jake White,Jake White,2024-03-31
-2222222222,Jessica Black,Jessica Black,2025-09-30
-3333333333,Mark Smith,Mark Smith,2024-12-31
-4444444444,Laura Johnson,Laura Johnson,2025-03-31
-5555555555,Amanda Davis,Amanda Davis,2024-06-30
-6666666666,Michael Taylor,Michael Taylor,2025-12-31
-7777777777,Kim Carter,Kim Carter,2024-09-30
-8888888888,Don Clark,Don Clark,2025-06-30
-9999999999,Sharon King,Sharon King,2024-12-31
-1112223333,Jeffrey Wright,Jeffrey Wright,2025-03-31
-2223334444,Scott Allen,Scott Allen,2024-06-30
-3334445555,Karen Lewis,Karen Lewis,2025-12-31
-4445556666,Jason Wright,Jason Wright,2024-09-30
+1234567890,John Doe,true,2025-01-01
+2345678901,Jane Doe,false,2024-01-01
+3456789012,Bob Smith,true,2023-01-01
+4567890123,Alice Johnson,false,2022-01-01
+5678901234,Charlie Brown,true,2021-01-01
+6789012345,David Davis,false,2020-01-01
+7890123456,Eve Green,true,2019-01-01
+8901234567,Frank White,false,2018-01-01
+9012345678,Grace Black,true,2017-01-01
+0123456789,Harry Garcia,false,2016-01-01
+1234567890,Irene Martin,true,2015-01-01
+2345678901,Jack Wilson,false,2014-01-01
+3456789012,Kate Thompson,true,2013-01-01
+4567890123,Lily Anderson,false,2012-01-01
+5678901234,Michael Moore,true,2011-01-01

@@ -10,14 +10,22 @@ public class Customer{
     private InsuranceCard insuranceCardNumber;
     private List<Claim> claims;
 
-    private List<Customer> dependents;
+    private List<String> dependents;
 
-    public Customer(String ID, String fullName, boolean isPolicyHolder, InsuranceCard insuranceCardNumber, List<Claim> claims, List<Customer> dependents) {
+    public Customer(String ID, String fullName, boolean isPolicyHolder, InsuranceCard insuranceCardNumber, List<Claim> claims, List<String> dependents) {
         this.ID = ID;
         this.fullName = fullName;
         this.insuranceCardNumber = insuranceCardNumber;
         this.claims = claims;
         this.isPolicyHolder = isPolicyHolder;
+        this.dependents = dependents;
+    }
+
+    public Customer(String ID, String fullName, Boolean isPolicyHolder, InsuranceCard insuranceCardNumber, List<String> dependents) {
+        this.ID = ID;
+        this.fullName = fullName;
+        this.isPolicyHolder = isPolicyHolder;
+        this.insuranceCardNumber = insuranceCardNumber;
         this.dependents = dependents;
     }
 
@@ -29,8 +37,12 @@ public class Customer{
         this.isPolicyHolder = null;
         this.dependents = new ArrayList<>();
     }
+//
+//    public Customer(String ID) {
+//        this.ID = ID;
+//    }
 
-//    public Customer(String ID, String fullName, Boolean isPolicyHolder, InsuranceCard) {
+    //    public Customer(String ID, String fullName, Boolean isPolicyHolder, InsuranceCard) {
 //        this.ID = ID;
 //        this.fullName = fullName;
 //        this.isPolicyHolder = isPolicyHolder;
@@ -63,11 +75,11 @@ public class Customer{
         isPolicyHolder = policyHolder;
     }
 
-    public List<Customer> getDependents() {
+    public List<String> getDependents() {
         return dependents;
     }
 
-    public void setDependents(List<Customer> dependents) {
+    public void setDependents(List<String> dependents) {
         this.dependents = dependents;
     }
 
@@ -92,7 +104,6 @@ public class Customer{
                 ", fullName='" + fullName + '\'' +
                 ", isPolicyHolder=" + isPolicyHolder +
                 ", insuranceCardNumber=" + insuranceCardNumber +
-                ", claims=" + claims +
                 ", dependents=" + dependents +
                 '}';
     }
