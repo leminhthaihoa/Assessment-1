@@ -1,5 +1,7 @@
 /**
  * @author <LE MINH THAI HOA - S3979194>
+ *     Reference: https://www.w3schools.com/java/java_arraylist.asp
+ *
  */
 
 package backend;
@@ -41,19 +43,6 @@ public class Customer{
         this.isPolicyHolder = null;
         this.dependents = new ArrayList<>();
     }
-//
-//    public Customer(String ID) {
-//        this.ID = ID;
-//    }
-
-    //    public Customer(String ID, String fullName, Boolean isPolicyHolder, InsuranceCard) {
-//        this.ID = ID;
-//        this.fullName = fullName;
-//        this.isPolicyHolder = isPolicyHolder;
-//        this.insuranceCardNumber = insuranceCard;
-//        this.claims = new ArrayList<>();
-//        this.dependents = new ArrayList<>();
-//    }
 
     public String getID() {
         return ID;

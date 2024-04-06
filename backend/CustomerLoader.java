@@ -1,5 +1,7 @@
 /**
  * @author <LE MINH THAI HOA - S3979194>
+ *     References: https://niithanoi.edu.vn/hoc-dung-bufferedreader-trong-java-qua-vi-du.html
+ *     https://www.w3schools.com/java/java_arraylist.asp
  */
 
 
@@ -8,7 +10,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 

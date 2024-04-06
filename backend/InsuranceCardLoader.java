@@ -1,5 +1,6 @@
 /**
  * @author <LE MINH THAI HOA - S3979194>
+ * Reference: https://niithanoi.edu.vn/hoc-dung-bufferedreader-trong-java-qua-vi-du.html
  */
 
 package backend;

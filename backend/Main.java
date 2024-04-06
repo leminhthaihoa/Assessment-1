@@ -1,12 +1,14 @@
 /**
  * @author <LE MINH THAI HOA - S3979194>
+ *     Reference: https://www.geeksforgeeks.org/stream-in-java/
+ *     https://www.geeksforgeeks.org/generating-random-numbers-in-java/
+ *     https://www.w3schools.com/java/java_date.asp
  */
 
 package backend;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -19,7 +21,6 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
 
             claimProcessManager.loadCustomers("backend/Customer.txt");
-//        claimProcessManager.loadInsuranceCards("backend/InsuranceCard.txt");
             claimProcessManager.loadClaims("backend/Claim.txt", "backend/Customer.txt", "backend/InsuranceCard.txt");
             CustomerLoader customerLoader = new CustomerLoader();
 

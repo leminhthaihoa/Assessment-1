@@ -1,5 +1,6 @@
 /**
  * @author <LE MINH THAI HOA - S3979194>
+ *     References: https://www.geeksforgeeks.org/java-io-filereader-class/
  */
 
 
@@ -12,7 +13,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ClaimProcessManagerImpl implements ClaimProcessManager{
@@ -159,17 +159,6 @@ public class ClaimProcessManagerImpl implements ClaimProcessManager{
                 } else {
                     System.err.println("Unable to load banking info: " + String.join(",", values));
                 }
-//
-//                if (bankingInfoValues.length >= 1) {
-//
-//                }
-//                if (bankingInfoValues.length >= 2) {
-//
-//                }
-//                if (bankingInfoValues.length >= 3) {
-//
-//                }
-//
                 claims.add(claim);
             }
         } catch (IOException e) {
