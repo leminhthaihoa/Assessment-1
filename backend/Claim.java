@@ -1,3 +1,7 @@
+/**
+ * @author <LE MINH THAI HOA - S3979194>
+ */
+
 package backend;
 
 import java.time.LocalDate;

@@ -1,3 +1,7 @@
+/**
+ * @author <LE MINH THAI HOA - S3979194>
+ */
+
 package backend;
 
 import java.time.LocalDate;
@@ -16,12 +20,7 @@ public class InsuranceCard {
         this.expirationDate = null;
     }
 
-//    public InsuranceCard(Customer cardHolder, Customer policyOwner){
-//        this.cardHolder = cardHolder;
-//        this.cardNumber = "";
-//        this.policyOwner = policyOwner;
-//        this.expirationDate = null;
-//    }
+
 
     public InsuranceCard(String cardNumber, String cardHolder, String policyOwner, LocalDate expirationDate) {
         this.cardNumber = cardNumber;
