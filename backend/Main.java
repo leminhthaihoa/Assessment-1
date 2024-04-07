@@ -120,10 +120,8 @@ public class Main {
                         System.out.println("Choose insured person: ");
                         int a = 0;
                         for (int i = 0; i < customers.size(); i++) {
-                            if (customers.get(i).getPolicyHolder()) {
                                 System.out.println((a + 1) + ") " + customers.get(i).getFullName());
                                 a += 1;
-                            }
                         }
                         System.out.print("Enter the number of the insured person you want: ");
                         String selectedCard = "";

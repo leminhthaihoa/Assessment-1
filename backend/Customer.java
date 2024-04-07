@@ -83,7 +83,8 @@ public class Customer{
         return claims;
     }
 
-    public void getInsuranceCardNumber(InsuranceCard insuranceCard) {
+    public void setClaims(List<Claim> claims) {
+        this.claims = claims;
     }
 
     public void setInsuranceCardNumber(InsuranceCard insuranceCardNumber) {
