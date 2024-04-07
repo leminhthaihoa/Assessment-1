@@ -9,7 +9,10 @@ Features:
 - See chosen claim
 - See all the claim
 
-How to use: All the choice is in numbers, so based on the UI to know what to choose and complete your testing. 
+How to use: 
+- Start the program
+- UI will ask question
+- answer the question
 
 Sample data files:
 "Customer.txt": contains the customer datas
@@ -18,7 +21,7 @@ Sample data files:
 
 Author: LE MINH THAI HOA
 Student ID: S3979194
-Lecturer: MINH VU THANH 
+Lecturer: MINH THANH VU
 
 References: https://www.geeksforgeeks.org/stream-in-java/
 https://shareprogramming.net/phan-biet-anymatch-allmatch-va-nonematch-trong-java-stream-api/
